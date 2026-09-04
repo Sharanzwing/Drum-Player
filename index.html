@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive virtual drum player built with HTML, CSS, and JavaScript. Play beats using your keyboard or touch.">
+  <title>Virtual Drum Player 🥁</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <main class="app-container">
+    <header class="header">
+      <div class="badge">LIVE AUDIO ENGINE</div>
+      <h1 id="title">Drum <span class="accent-emoji">🥁</span> Player</h1>
+      <p class="subtitle">Tap the drum pads or press the matching keys on your keyboard to play rhythms in real time.</p>
+    </header>
+
+    <!-- Controls Bar -->
+    <div class="controls-panel">
+      <div class="volume-container">
+        <label for="volumeSlider" class="control-label">
+          <svg class="vol-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zm-2.5 9.77l-4.5-4.5H3v6h4l4.5 4.5v-6zM16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+          </svg>
+          Master Volume
+        </label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.8">
+        <span id="volumeValue" class="vol-percentage">80%</span>
+      </div>
+      <div class="key-hints">
+        <span class="hint-pill"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span>
+        <span class="hint-pill"><kbd>J</kbd><kbd>K</kbd><kbd>L</kbd></span>
+      </div>
+    </div>
+
+    <!-- Drum Pads Set -->
+    <div class="set">
+      <button class="w drum" data-key="w" aria-label="Tom 1">
+        <div class="drum-inner">
+          <div class="key-badge">W</div>
+          <div class="drum-img-wrapper">
+            <img src="images/tom1.png" alt="Tom 1 drum" />
+          </div>
+          <span class="drum-name">Tom 1</span>
+        </div>
+      </button>
+
+      <button class="a drum" data-key="a" aria-label="Crash Cymbal">
+        <div class="drum-inner">
+          <div class="key-badge">A</div>
+          <div class="drum-img-wrapper">
+            <img src="images/crash.png" alt="Crash Cymbal" />
+          </div>
+          <span class="drum-name">Crash</span>
+        </div>
+      </button>
+
+      <button class="s drum" data-key="s" aria-label="Kick Bass">
+        <div class="drum-inner">
+          <div class="key-badge">S</div>
+          <div class="drum-img-wrapper">
+            <img src="images/kick.png" alt="Kick Bass drum" />
+          </div>
+          <span class="drum-name">Kick</span>
+        </div>
+      </button>
+
+      <button class="d drum" data-key="d" aria-label="Snare">
+        <div class="drum-inner">
+          <div class="key-badge">D</div>
+          <div class="drum-img-wrapper">
+            <img src="images/snare.png" alt="Snare drum" />
+          </div>
+          <span class="drum-name">Snare</span>
+        </div>
+      </button>
+
+      <button class="j drum" data-key="j" aria-label="Tom 2">
+        <div class="drum-inner">
+          <div class="key-badge">J</div>
+          <div class="drum-img-wrapper">
+            <img src="images/tom2.png" alt="Tom 2 drum" />
+          </div>
+          <span class="drum-name">Tom 2</span>
+        </div>
+      </button>
+
+      <button class="k drum" data-key="k" aria-label="Tom 3">
+        <div class="drum-inner">
+          <div class="key-badge">K</div>
+          <div class="drum-img-wrapper">
+            <img src="images/tom3.png" alt="Tom 3 drum" />
+          </div>
+          <span class="drum-name">Tom 3</span>
+        </div>
+      </button>
+
+      <button class="l drum" data-key="l" aria-label="Tom 4">
+        <div class="drum-inner">
+          <div class="key-badge">L</div>
+          <div class="drum-img-wrapper">
+            <img src="images/tom4.png" alt="Tom 4 drum" />
+          </div>
+          <span class="drum-name">Tom 4</span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Visualizer Wave Effect -->
+    <div class="visualizer" id="visualizer">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Crafted with <span class="heart">❤️</span> for music & code lovers.</p>
+  </footer>
+
+  <script src="index.js" charset="utf-8"></script>
+</body>
+</html>
